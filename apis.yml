@@ -1,22 +1,94 @@
 aid: skillsync
 name: Skillsync
-description: Skillsync is a company surfaced as a portfolio company of y-combinator and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Skillsync gives AI coding sessions a permanent home — "GitHub for your agent
+  sessions." Developers install the `skl` CLI, sign in once through the browser,
+  and publish a coding session; they can then revisit past work, share the full
+  context behind a change, and turn workflows that worked into reusable skills.
+  The CLI discovers sessions from Claude Code (full support), Codex and OpenCode
+  (beta), and also pi, Campfire, Cursor, Grok, Amp, and Antigravity, and ships a
+  Model Context Protocol server (`skl mcp`) that gives an assistant a long memory
+  over past and published sessions. Skillsync is a Y Combinator (W2026) company;
+  it exposes no public REST API — the CLI and its bundled MCP server are the
+  integration surface.
 url: https://raw.githubusercontent.com/api-evangelist/skillsync/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://skillsync.com/opengraph-image.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - y-combinator
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enriched-from-live-product
+x-yc-batch: W2026
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
+- Developer Tools
+- AI
+- Agents
+- Coding Assistants
+- Model Context Protocol
+- CLI
+- Knowledge Management
+- Y Combinator
 apis: []
+common:
+- type: DomainSecurity
+  url: security/skillsync-domain-security.yml
+- type: Website
+  url: https://skillsync.com
+- type: DeveloperPortal
+  url: https://skillsync.com/docs/quickstart
+- type: Documentation
+  url: https://skillsync.com/docs/quickstart
+- type: GettingStarted
+  url: https://skillsync.com/docs/quickstart
+- type: Blog
+  url: https://skillsync.com/blog
+- type: GitHubOrganization
+  url: https://github.com/skillsynchq
+- type: Login
+  url: https://skillsync.com/login
+- type: PrivacyPolicy
+  url: https://skillsync.com/privacy
+- type: MCPServer
+  name: Skillsync MCP server
+  url: mcp/skillsync-mcp.yml
+- type: CLI
+  name: skl CLI
+  url: cli/skillsync-cli.yml
+- type: Packages
+  name: skl CLI binary
+  url: packages/skillsync-packages.yml
+- type: Authentication
+  url: authentication/skillsync-authentication.yml
+- type: ChangeLog
+  url: changelog/skillsync-changelog.yml
+- type: LLMsTxt
+  url: llms/skillsync-llms.txt
+- type: Conformance
+  url: conformance/skillsync-conformance.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 9
+  pass: local-v1

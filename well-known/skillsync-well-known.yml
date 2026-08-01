@@ -1,0 +1,13 @@
+generated: '2026-07-21'
+method: searched
+host: https://skillsync.com
+description: >-
+  Probed the standard /.well-known/ discovery surface on the Skillsync web host.
+  None are published (all 404). Absence is valid recorded data — Skillsync is a
+  CLI/MCP product with no public REST API or OAuth authorization-server metadata.
+documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}

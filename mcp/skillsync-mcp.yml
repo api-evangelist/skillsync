@@ -1,0 +1,51 @@
+generated: '2026-07-21'
+method: searched
+status: published
+source: https://skillsync.com/docs/mcp-server
+description: >-
+  Skillsync ships an official Model Context Protocol server as a subcommand of
+  its CLI binary: `skl mcp`, running over stdio (no hosted URL, no port). Connect
+  it to Claude Code, Claude Desktop, or Cursor and the assistant gains a long
+  memory over past coding sessions on the machine plus every session published to
+  skillsync.com. Local-only tools work without auth; skillsync.com-backed tools
+  require `skl login` (the server calls auth_status before any login-gated tool).
+  Tool list captured verbatim from the Skillsync MCP documentation.
+server:
+  name: skl
+  transport: stdio
+  command: skl mcp
+  auth: oauth2            # browser sign-in via `skl login`; local-only tools need no auth
+install:
+  claude_code: claude mcp add --transport stdio skl -- skl mcp
+  claude_desktop: '{"mcpServers":{"skl":{"command":"skl","args":["mcp"]}}}'
+  cursor: '.cursor/mcp.json — {"mcpServers":{"skl":{"command":"skl","args":["mcp"]}}}'
+tools:
+  # Reading what is on this machine (local-only, no login required)
+  - name: list_sessions
+    description: Metadata for sessions on this machine (id, agent, title, timestamp, project path). Scoped to current project by default; pass all:true to look everywhere.
+  - name: search_sessions
+    description: Keyword content search over local sessions; ranked matches with snippets.
+  - name: get_session
+    description: The full conversation for a local session id — questions, reasoning, tool calls, results.
+  # Reading what you have published (reach skillsync.com, cover other machines)
+  - name: search_replay
+    description: Keyword content search over your uploaded threads.
+  - name: get_replay_thread
+    description: The full conversation for a published thread by slug.
+  # Publishing
+  - name: upload_session
+    description: Publishes a local session to Skillsync and returns its URL; re-uploading updates it in place. Pass workspace to publish into a team space.
+  - name: list_workspaces
+    description: Lists the team workspaces you belong to; use the returned slug with upload_session.
+  # Reusing successful workflows (skills)
+  - name: list_skills
+    description: Lists the skills available to you on Skillsync.
+  - name: get_skill
+    description: Reads a skill before you use or install it.
+  - name: install_skill
+    description: Installs a skill for you or for the current project.
+  - name: upload_skill
+    description: Publishes a local skill to Skillsync.
+  # Confirming login
+  - name: auth_status
+    description: Reports whether you are logged in and as whom; the assistant calls this before any login-gated tool.

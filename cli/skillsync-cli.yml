@@ -1,0 +1,44 @@
+generated: '2026-07-21'
+method: searched
+source: https://skillsync.com/docs/cli-reference
+description: >-
+  The Skillsync CLI (`skl`) — the primary interface to the product. It discovers
+  AI coding sessions on the local machine (Claude Code fully supported; Codex and
+  OpenCode in beta; also finds pi, Campfire, Cursor, Grok, Amp, Antigravity),
+  publishes them to skillsync.com as shareable threads, and lets an agent
+  continue past threads. The binary also runs the MCP server (`skl mcp`). Command
+  surface captured verbatim from docs.skillsync.com. The binary itself is
+  catalogued in packages/skillsync-packages.yml.
+docs: https://skillsync.com/docs/cli-reference
+quickstart: https://skillsync.com/docs/quickstart
+repo: https://github.com/skillsynchq/skl-releases
+binary: skl
+install:
+  curl: curl -fsSL https://install.skillsync.com | sh   # installs to ~/.local/bin/skl
+core_command: skl upload <session-id-or-title>
+auth: >-
+  Browser sign-in — `skl login` opens the Skillsync sign-in flow and returns
+  control to the CLI once the local callback completes; credentials stored on the
+  machine. `skl whoami` confirms the account.
+commands:
+  setup:
+    - {name: init, description: First-run setup — logs you in and optionally turns on background auto-upload. Idempotent.}
+    - {name: login, description: Authenticate with the server via browser sign-in; returns control once the local callback completes.}
+    - {name: logout, description: Remove the stored credentials on this machine.}
+    - {name: whoami, description: Show the currently authenticated account.}
+  browsing_searching:
+    - {name: list, description: List sessions discovered on this machine. Scoped to current project by default; --all for every project.}
+    - {name: search, description: Search threads (uploaded by default; --local for local sessions, --all applies only with --local). Optional query seeds an interactive picker.}
+    - {name: view, description: Read a local session or a published thread in the terminal; supports message ranges (e.g. <id>#5-12).}
+  publishing:
+    - {name: upload, description: Publish a local session by id or exact title, or interactively. Flags -g/--global, --workspace <slug>, --personal, --auto.}
+    - {name: auto, description: Manage background auto-upload (every 15 min). Subcommands enable / disable / status.}
+    - {name: workspace, description: List workspaces and choose a default upload target. Subcommands list / use <slug> / use --personal.}
+  continuing:
+    - {name: continue, description: Resume a Skillsync thread on a local coding agent by slug or URL; --with claude|codex|opencode moves it to a different agent; --local for a local session id.}
+  filtering:
+    - {name: ignore, description: Manage the ignore list; sessions under an ignored path are filtered from upload/list/search. Subcommands add / remove / list.}
+  integrations:
+    - {name: skills, description: Browse and install reusable workflows (skills) from Skillsync, or publish your own. Subcommands list / local / install <slug> / upload <name>.}
+    - {name: mcp, description: Run as an MCP server over stdio so an AI assistant can search and read your sessions. See mcp/skillsync-mcp.yml.}
+    - {name: completions, description: Generate shell completions (bash, zsh, fish).}

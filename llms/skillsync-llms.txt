@@ -1,0 +1,24 @@
+# Skillsync
+
+> Skillsync gives your AI coding sessions a permanent home — "GitHub for your agent sessions." Install the `skl` CLI, sign in once, and publish a session; revisit past work, share the full context behind a change, and turn workflows that worked into reusable skills. The CLI finds sessions from Claude Code (full support), Codex and OpenCode (beta), and also pi, Campfire, Cursor, Grok, Amp, and Antigravity. Skillsync is a Y Combinator (W2026) company. No public REST API — the CLI and its bundled Model Context Protocol server are the integration surface.
+
+## Product
+- [Home](https://skillsync.com): What Skillsync is and how to install the CLI.
+- [Enterprise](https://skillsync.com/enterprise): Team workspaces and enterprise offering.
+- [Blog](https://skillsync.com/blog): Product news ([RSS](https://skillsync.com/blog/rss.xml)).
+
+## Docs
+- [Quickstart](https://skillsync.com/docs/quickstart): Install the CLI, authenticate in the browser, upload a transcript.
+- [Upload command](https://skillsync.com/docs/upload-command): Session resolution and re-upload behavior.
+- [CLI reference](https://skillsync.com/docs/cli-reference): The full `skl` command surface.
+- [Transcript support](https://skillsync.com/docs/transcript-support): Supported coding agents.
+- [MCP server](https://skillsync.com/docs/mcp-server): Connect `skl mcp` to Claude Code, Claude Desktop, or Cursor; the 12 tools.
+- [Troubleshooting](https://skillsync.com/docs/troubleshooting): Common issues.
+
+## Tooling
+- [skl CLI (GitHub Releases)](https://github.com/skillsynchq/skl-releases/releases): First-party binary; install via `curl -fsSL https://install.skillsync.com | sh`.
+- [MCP server](https://skillsync.com/docs/mcp-server): `skl mcp` over stdio — list_sessions, search_sessions, get_session, search_replay, get_replay_thread, upload_session, list_workspaces, list_skills, get_skill, install_skill, upload_skill, auth_status.
+
+## Account
+- [Sign in](https://skillsync.com/login): Browser sign-in used by `skl login`.
+- [Privacy policy](https://skillsync.com/privacy)

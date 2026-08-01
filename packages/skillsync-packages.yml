@@ -1,0 +1,21 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/skillsynchq/skl-releases
+description: >-
+  Skillsync distributes a single first-party binary, the `skl` CLI, via GitHub
+  Releases (skillsynchq/skl-releases) — a musl-static Linux and Apple-Darwin
+  build for x86_64 and aarch64, installed with the hosted install script. Earlier
+  releases (≤ v0.16.x) shipped the binary as `replay`; v0.17.0+ ship it as `skl`.
+  No language client-library SDK (npm/PyPI/etc.) is published — the CLI and its
+  bundled MCP server are the integration surface. Latest release v0.17.2
+  (2026-07-20).
+packages:
+  - language: binary
+    registry: github-releases
+    name: skl
+    url: https://github.com/skillsynchq/skl-releases/releases
+    install: curl -fsSL https://install.skillsync.com | sh
+    platforms: [x86_64-unknown-linux-musl, aarch64-unknown-linux-musl, x86_64-apple-darwin, aarch64-apple-darwin]
+    latest: v0.17.2
+    official: true
+    notes: The same binary runs the CLI and the `skl mcp` MCP server. See cli/skillsync-cli.yml and mcp/skillsync-mcp.yml.

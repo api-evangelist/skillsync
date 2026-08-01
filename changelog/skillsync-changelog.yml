@@ -1,0 +1,23 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/skillsynchq/skl-releases/releases
+description: >-
+  Skillsync publishes no dated prose changelog; the release history of the `skl`
+  CLI is tracked as GitHub Releases on skillsynchq/skl-releases. Releases carry
+  version tags only (no per-release notes). Recent window captured below; the
+  GitHub Releases page is the source of truth. Note the v0.17.0 rename of the
+  binary from `replay` to `skl`.
+scheme: semver
+current_version: v0.17.2
+releases_url: https://github.com/skillsynchq/skl-releases/releases
+entries:
+  - {version: v0.17.2, date: '2026-07-20'}
+  - {version: v0.17.1, date: '2026-07-20'}
+  - {version: v0.17.0, date: '2026-07-20', highlights: 'Binary renamed replay -> skl (skl-cli-v* archives).'}
+  - {version: v0.16.0, date: '2026-07-18'}
+  - {version: v0.15.0, date: '2026-07-18'}
+  - {version: v0.14.1, date: '2026-07-18'}
+  - {version: v0.14.0, date: '2026-07-17'}
+  - {version: v0.13.1, date: '2026-07-16'}
+  - {version: v0.13.0, date: '2026-07-16'}
+  - {version: v0.12.0, date: '2026-06-27'}

@@ -1,0 +1,26 @@
+generated: '2026-07-21'
+method: derived
+source: mcp/skillsync-mcp.yml, authentication/skillsync-authentication.yml
+description: >-
+  Cross-cutting standards Skillsync conforms to, derived from its published
+  artifacts. Skillsync ships no REST API/OpenAPI, so most API standards are N/A;
+  its integration surface is a Model Context Protocol server plus a browser
+  OAuth sign-in flow. No published compliance program (SOC 2 / ISO 27001 / etc.)
+  was found, so no Compliance pointer is asserted.
+standards:
+  - id: mcp
+    name: Model Context Protocol
+    conforms: true
+    evidence: Ships an official MCP server (`skl mcp`, stdio) exposing 12 tools — mcp/skillsync-mcp.yml.
+  - id: oauth2
+    name: OAuth 2.0 (authorization code, browser sign-in)
+    conforms: true
+    evidence: '`skl login` browser sign-in with local callback — authentication/skillsync-authentication.yml.'
+  - id: openapi
+    conforms: false
+    evidence: No public REST API or OpenAPI document found (/openapi.json, /openapi.yaml -> 404).
+  - id: rfc9457-problem-details
+    conforms: false
+  - id: asyncapi
+    conforms: false
+    evidence: No event/webhook/streaming surface published.
