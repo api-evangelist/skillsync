@@ -45,7 +45,7 @@ x-tier-reason: enriched-from-live-product
 x-yc-batch: W2026
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-21'
+modified: '2026-10-06'
 tags:
 - Company
 - Developer Tools
@@ -69,6 +69,8 @@ tags_raw:
 - Knowledge-Management
 apis: []
 common:
+- url: https://skillsync.com/blog/rss.xml
+  type: BlogRSS
 - type: DomainSecurity
   url: security/skillsync-domain-security.yml
 - type: Website
